@@ -1,11 +1,13 @@
-﻿namespace Domain.DTOs
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.DTOs
 {
     public class FuncionarioRequest
     {
-        public string Nome { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
-        public string Senha { get; set; }
-        public decimal Salario { get; set; }
-        public int PermissaoId { get; set; }
+        public string Password { get; set; }
+        public decimal Salary { get; set; }
+        public int ProfileId { get; set; }
     }
 }

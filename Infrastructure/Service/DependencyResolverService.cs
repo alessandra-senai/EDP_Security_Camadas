@@ -1,4 +1,9 @@
-﻿using Infrastructure.Repository;
+﻿using AutoMapper;
+using Domain.DTOs;
+using Domain.Interfaces;
+using Domain.Models;
+using Infrastructure.Repository;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +17,9 @@ namespace Infrastructure.Service
             services.AddDbContext<CamadasContext>(options =>
                 options.UseSqlServer("name=ConnectionStrings:ServerConnection",
                 x => x.MigrationsAssembly("Infrastructure")));
+
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>(); 
         }
 
         public static void MigrateDatabase(IServiceProvider serviceProvider)

@@ -18,6 +18,7 @@ var appSettings = new ConfigurationBuilder()
     .Build();
 
 Infrastructure.Service.DependencyResolverService.Register(builder.Services, appSettings);
+Domain.Service.DependencyResolverService.Register(builder.Services);
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
