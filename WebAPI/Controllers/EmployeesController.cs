@@ -8,7 +8,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
